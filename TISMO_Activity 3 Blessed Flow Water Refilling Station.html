@@ -69,7 +69,7 @@
                      <div id="Mineral">
                     <img id='MineralGlass' class='floatright' src='MineralGlass.jpg' alt='water station' width="200" height="200"/>
                     <span class="MineralText">For Mineral 25 Pesos per Refill</span> <br>
-                    <input type="button" value="ORDER" class="button Orderbutton" id='Mineralbutton'>
+                    <input type="button" value="ORDER" class="button Orderbutton" id='Mineralbutton' onclick="myFunction()">
                 </div>
 
                 <div id="Alkaline">
@@ -110,13 +110,13 @@
                     <div id='SlimCapdiv'> 
                         <img id='SlimCap' src="SlimCap.jpg" alt="'water station" width="250" height="250">
                         <span class="SlimCapText">Slim Cap 25 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimCapbutton'>
+                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimCapbutton' onclick="SlimCapOrder()">
                         
                     </div>
                     <div id='SlimBigdiv'>
                         <img id='SlimBig' src="SlimBigCap.jpg" alt="'water station" width="250" height="250">
                         <span class="SlimBigText">Slim Big cap 35 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimBigCapbutton'>
+                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimBigCapbutton' onclick="SlimBigOrder()">
                     </div>
                     <div id='SlimFaucetdiv'>
                         <img id='SlimFaucet' src="SlimFaucet.jpg" alt="'water station" width="250" height="250">
@@ -259,7 +259,7 @@
                         </tr>
 
                         <tr>
-                        <td>Juancarlos12322 Pembo Makati</td>
+                        <td id="SlimCapOrder"></td>
                         <td>Mineral</td> 
                         <td>PHP 25</td>
                         <td>2</td>
@@ -287,7 +287,9 @@
             
 
                 <div id="ContainerOrder">
-                    
+                    <div id="SlimCapOrder">
+
+                    </div>
                 </div>
                 <!-- <div id="noteContainer">
                     <span id = "Notespan">NOTE:</span><br>
@@ -320,6 +322,12 @@
                     var mouse = document.getElementById(thisID);
                     mouse.style.left = x - 150 + 'px';
                     mouse.style.top = y + 'px';
+                }
+                function SlimCapOrder(){
+                    document.getElementById("ContainerOrder").innerHTML = "Hello World";
+                }
+                function SlimBigOrder(){
+                    document.getElementById("ContainerOrder").innerHTML = "Hello World";
                 }
                 
             </script>
