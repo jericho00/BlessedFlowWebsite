@@ -140,7 +140,7 @@ body {
     margin-right: auto;
     position: relative;
     top: 0px;
-    left: -20px;
+    left: -1.25em;
   }
   .SlimText {
     position: relative;
@@ -152,7 +152,7 @@ body {
   }
   #SlimConbutton{
     position: relative;
-    top: 90px;
+    top: 5.625em;
     right: 8.7em;
   }
   #Round{
@@ -186,7 +186,7 @@ body {
   }  
   #containerparts{
     background-color: #37C4FF;
-      height: 3.75;
+      height: 3.75em;
       text-align: center;
       font-style: normal;
       width: 63.313em;
@@ -380,15 +380,15 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 1em;
+  margin: .25em .125em;
   transition-duration: 0.4s;
   cursor: pointer;
   }
   .signupButton{
     background-color: white; 
     color: black; 
-    border: 2px solid #2e9cca;
+    border: .125em solid #2e9cca;
   }
   
   .signupButton:hover{
@@ -399,7 +399,7 @@ body {
   .verifyButton {
     background-color: white;
     color: black;
-    border: 2px solid #2e9cca;
+    border: .125em solid #2e9cca;
   }
 
   .verifyButton:hover{
@@ -410,7 +410,7 @@ body {
   .sign-inButton{
     background-color: white; 
     color: black; 
-    border: 2px solid #2e9cca;
+    border: .125em solid #2e9cca;
   }
   
   .sign-inButton:hover{
@@ -420,7 +420,7 @@ body {
   .Orderbutton{
     background-color: white; 
     color: black; 
-    border: 2px solid #2e9cca;
+    border: .125em solid #2e9cca;
     
   }
  
@@ -436,7 +436,7 @@ body {
   .checkout{
     background-color: white; 
     color: black; 
-    border: 2px solid #2e9cca;
+    border: .125em solid #2e9cca;
   }
   #details, #customerlogin, #authentication-bar,
    #orderlist {
@@ -462,13 +462,13 @@ body {
 
 #refill, #newcontainer{
   background-color: #37C4FF;
-    height: 60px;
+    height: 3.75em;
     text-align: center;
     font-style: normal;
-    width: 1013px;
+    width: 63.313em;
     margin-top: 0px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: .063em;
+    padding-bottom: .063em;
 }
 
  #BF-frontpic {
@@ -476,12 +476,12 @@ body {
     justify-content: center;
     pointer-events: none;
     background-color: rgb(96, 244, 255);
-    max-width: 240px;
+    max-width: 15em;
     width: 20%;
     margin: auto;
-    border-radius: 1px;
+    border-radius: .063em;
     position: absolute;
-    padding: 3px;
+    padding: .188em;
     
 }
 
@@ -491,21 +491,21 @@ body {
   margin-left: auto;
   width: 50%;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 75em;
   width: 100%;
 }
 
 #map {
-  width: 1020px;
-  height: 574px;
+  width: 63.75em;
+  height: 35.875em;
   margin: 0 auto;
   position: relative;
 }
 
 .image {
   width: 100%;
-  max-height: 250px;
-  max-width: 250px;
+  max-height: 15.625em;
+  max-width: 15.625em;
   left: 2em;
   top: 2em;
 }
@@ -528,10 +528,10 @@ body {
     font-family: analdin;
     text-align: left;
     justify-content: center;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: .75em 1.25em;
+    margin: .5em 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: .063em solid #ccc;
     box-sizing: border-box;
   }
 .textforlogin {
@@ -552,10 +552,10 @@ body {
     font-family: analdin;
     text-align: left;
     justify-content: center;
-    padding: 12px 0px;
-    margin: 6px 0;
+    padding: .75em 0px;
+    margin: .375em 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: .063em solid #ccc;
     box-sizing: border-box;
   }
 
@@ -584,7 +584,7 @@ body {
   margin-right: auto;
   position: relative;
   right: 22em;
-  top: 7px;
+  top: .438em;
 }
 
 #To-verify {
