@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['password']) && isset($_SESSION['username']))
+
+echo "hello world";?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -344,3 +349,4 @@
     </body>
 
 </html>
+    
