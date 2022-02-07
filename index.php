@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
@@ -337,6 +338,8 @@
 
 =======
 <?php?>
+=======
+>>>>>>> 8ab62582d212bf50af785eee6534e86257b652aa
 <!DOCTYPE html>
 <html>
     <head>
@@ -508,14 +511,18 @@
                     
                 </div>
                 <br><br>
+                <form action="login.php" method = "post">
+                <?php if (isset($_GET['error'])) { ?>
+     		        <p class="error"><?php echo $_GET['error']; ?></p>
+     	        <?php } ?>
                 <label for="username" class="textforlogin">Username:</label><br>
                 <input type="text" id="username" name="username" size="70" placeholder="Enter Username"><br><br>
                 <label for="password" class="textforlogin">Password:</label><br>
                 <input type="text" id="password" name="password" size="70" placeholder="Enter Password"><br><br>
                 <a class="signupPage" href="#" onclick="show('signup')">Do you have an account? Sign up now</a><br><br>
-
+                    <button type ="submit">login</button>
                 <input type="button" value="Sign In" class="button sign-inButton">
-                
+                </form>
                 <img id='Logoicon' class='floatright' src='loginIcon-two.png' alt='water station logo' width="30%" height="45%"/>
 
                 <img id='loginLogo' class='floatright' src='WaterStationLogo.jpg' alt='water station logo' width="45%" height="45%"/>
