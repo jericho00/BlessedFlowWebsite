@@ -13,5 +13,5 @@ if (!$conn) {
     die("Could not connect to MySQL server.");
 }
 else{
-    echo "Hello World";
+   ;
 }
