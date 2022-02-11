@@ -24,9 +24,11 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                 <img src="Homeicon.png" class = "icon" id = "homeIcon" width="50px" height="40px"> <a class='navBar' href='#' onclick="show('home')">Home</a> <br> <br>
                 <img src="Producticon.jpg" class = "icon" id = "homeIcon" width="40px" height="40px"> <a class='navBar' href='#' onclick="show('product')">Product</a> <br> <br>
                 <img src="AboutusIconn.png" class = "icon" id = "homeIcon" width="35px" height="40px"> <a class='navBar' href='#' onclick="show('about')">About Us</a> <br> <br>
+
                 
                 <img src="loginIcon.png" class = "icon" id = "homeIcon" width="50px" height="40px"> <a class='navBar' href="index.php">Logout</a> <br> <br>
                 
+
             </div>
             </nav>
             <div id='main-container'>
@@ -36,8 +38,9 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
 
 
                 <div>
+
                     <img id='WaterStationLogo' class='floatright' src="main-background-two.jpg" alt='water station logo' width="100%" height="960px"/>
-                    
+
                     <img id='WaterStationLogo' class='floatright' src='WaterStationLogo.jpg' alt='water station logo' width="50%" height="400px"/>
                 </div>
         
@@ -56,7 +59,9 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                 <a class="HomeTextBottom">30 STAGES INTENSE FILTRATION</a>
 
                 <div>
+
                     <img id='WaterStationLogo' class='floatright' src="main-background-two.jpg" alt='water station logo' width="100%" height="960px"/>
+
                 
                     <img id='WaterStationLogo' class='floatright' src='WaterStationLogo.jpg' alt='water station logo' width="50%" height="400px"/>
                 </div>
