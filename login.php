@@ -30,14 +30,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             if ($row['username'] === $uname && $row['password'] === $pass) {
             	
         
-            	header("Location: home.php");
+            	header("Location: firstpage.php");
 		        exit();
             }else{
-				header("Location: index.php?error=Incorect User name or password");
+				header("Location: index.php?error=Incorrect Username or Password");
 		        exit();
 			}
 		}else{
-			header("Location: index.php?error=Incorect User name or password");
+			header("Location: index.php?error=Incorrect Username or Password");
 	        exit();
 		}
 	}

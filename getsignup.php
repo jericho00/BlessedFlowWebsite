@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    
     <?php
     require "db.php";
         $province = $_REQUEST['province'];
@@ -21,6 +22,7 @@
         $name =  $_REQUEST['name'];
         $phone_no = $_REQUEST['phone_no'];
         
+        
         $sql = "INSERT INTO users VALUES ('','$name','$houseno','$street','$subdiv','$brgy','$city','$region','$province','$username', 
             '$password','$phone_no')";
 
@@ -33,12 +35,12 @@
                 // Display the alert box 
                     echo "<script>alert('$message');</script>";
                 }
-                
-                
+                header("Location: http://localhost/BlessedFlowWebsite/BlessedFlowWebsite/firstpage.php");
+                exit();
                 // Function call
                 function_alert("You have successfully Signed Up Click OK to continue");
 
-
+                // link($home);
            
         } 
         else{
@@ -57,7 +59,7 @@
         // function_alert("You have successfully Signed Up Click OK to continue");
         
         ?>
-
+    
 
         
 </body>
