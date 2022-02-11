@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['password']) && isset($_SESSION['username']))
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -194,29 +199,21 @@
                     <h1 style="color: white">Customer Details</h1>
                 </div>
                 <br>
-                <form method="POST" action="getsignup.php">
-
                 <label for="name" class="textforsignup">Name:</label><br>
                 <input type="text" id="name" name="name" size="70" placeholder="Name Here"><br><br>
-
                 <label for="housenumber" class="textforsignup">House Number:</label><br>
-                <input type="text" id="housenumber" name="house_no" size="70" placeholder="House No."><br><br>
-
+                <input type="text" id="housenumber" name="housenumber" size="70" placeholder="House No."><br><br>
                 <label for="street" class="textforsignup">Street:</label><br>
                 <input type="text" id="street" name="street" size="70" placeholder="Street"><br><br>
     
                 <label for="subdivision" class="textforsignup">Subdivision:</label><br>
-                <input type="text" id="subdivision" name="subdiv" size="70" placeholder="Subdivision"><br><br>
-
+                <input type="text" id="subdivision" name="subdivision" size="70" placeholder="Subdivision"><br><br>
                 <label for="barangay" class="textforsignup">Barangay:</label><br>
-                <input type="text" id="barangay" name="brgy" size="70" placeholder="Barangay"><br><br>
-
+                <input type="text" id="barangay" name="barangay" size="70" placeholder="Barangay"><br><br>
                 <label for="city" class="textforsignup">City:</label><br>
                 <input text="text" id="city" name="city" size="70" placeholder="City"><br><br>
-
                 <label for="region" class="textforsignup">Region:</label><br>
                 <input type="text" id="region" name="region" size="70" placeholder="Region"><br><br>
-
                 <label for="province" class="textforsignup">Province:</label><br>
                 <input type="text" id="province" name="province" size="70" placeholder="Province"><br><br>
         
@@ -227,26 +224,21 @@
                 
                 <br>    
                 <label for="Username" class="textforsignup">Username:</label><br>
-                <input type="text" id="UsernameCustomer" name="username" size="70" ><br><br>
-
+                <input type="text" id="UsernameCustomer" name="Username" size="70" ><br><br>
                 <label for="Password" class="textforsignup">Password:</label><br>
-                <input type="text" id="passwordCustomer" name="password" size="70"><br><br>
-
-                <!-- <label for="passwordConfirm" class="textforsignup">Confirm Passsword:</label><br>
-                <input type="text" id="passwordConfirm" name="passwordConfirm" size="70" ><br><br> -->
-
+                <input type="text" id="passwordCustomer" name="passwordCustomer" size="70"><br><br>
+                <label for="passwordConfirm" class="textforsignup">Confirm Passsword:</label><br>
+                <input type="text" id="passwordConfirm" name="passwordConfirm" size="70" ><br><br>
                 <label for="PhoneNumber" class="textforsignup">Phone Number:</label><br>
-                <input type="number" id="PhoneNumber" name="phone_no" size="70" placeholder="ex. 09XXXXXXXXX"><br><br>
+                <input type="number" id="PhoneNumber" name="PhoneNumber" size="70" placeholder="ex. 09XXXXXXXXX"><br><br>
 
                 <label for="signupYes"></label><br> <br>
                 <div class="SignupYes">
                     <input type="checkbox" id="married" name="signupYes" value="M">
                     <label for="signupYes" style="font-size: 1.2em;">I hereby declare that the information given above is true</label> <br>
                 </div><br>
+                <input type="button" value="Sign Up" class="button signupButton" href="#" onclick="show('authentication')">
                 
-                <button type = "submit" class="button signupButton">Sign Up </button>
-                
-                </form>
             </div>
 
             <div id="authentication" style="display: none; background-color: #29648A;">
@@ -356,5 +348,5 @@
 
     </body>
 
->>>>>>> e89f8ff14e1e25adc6f7632c938f1a553e915e22
 </html>
+    
