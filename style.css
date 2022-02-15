@@ -569,8 +569,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 69em;
-    left: 25em;
+    bottom: 16em;
+    left: 0em;
 }
 
 #Logoicon {
@@ -578,8 +578,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   position:relative;
-  top: 20em;
-  left: 40em;
+  bottom: 20em;
+  left: 16em;
 }
 
 #FBlogo {
@@ -587,7 +587,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  right: 8em;
+  right: 21.5em;
   top: .438em;
 }
 
@@ -627,10 +627,10 @@ table tr {
   background-color: #d5f0fc;
 }
 #error {
-  background-color: white;
-  color: white;
+  background-color: rgb(255, 132, 132);
+  color: black;
   padding: 10px;
   border-radius: 5px;
-  margin: 20px auto;
   position: relative;
+  width: 32em;
 }

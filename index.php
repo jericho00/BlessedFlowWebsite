@@ -27,7 +27,7 @@
                     <form action="login.php" method = "post">
 
                     <?php if (isset($_GET['error'])) { ?> 
-                        <p id="error" style = "color: white;"><?php echo $_GET['error']; ?></p>
+                        <p id="error"><?php echo $_GET['error']; ?></p>
                     <?php } ?>
 
                     <label for="username" class="textforlogin">Username:</label><br>
@@ -37,11 +37,12 @@
                     <input type="text" id="password" name="password" size="70" placeholder="Enter Password"><br><br>
 
                     <a class="signupPage" href="#" onclick="show('signup')">Do you have an account? Sign up now</a><br><br>
+                    <a class="signupPage" href="admin.php">Sign in as Administrator</a><br><br>
                         <button type ="submit" class="button sign-inButton" value="Sign In">login</button>
                     
                     <img id='Logoicon' class='floatright' src='loginIcon-two.png' alt='water station logo' width="30%" height="45%"/>
 
-                    <img id='loginLogo' class='floatright' src='WaterStationLogo.jpg' alt='water station logo' width="45%" height="45%"/>
+                    <img id='loginLogo' class='floatright' src='WaterStationLogo.jpg' alt='water station logo' width="60%" height="60%"/>
                     </form>
                 </div>
                 
@@ -98,7 +99,7 @@
                 <input type="text" id="UsernameCustomer" name="username" size="70" required><br><br>
 
                 <label for="Password" class="textforsignup">Password:</label><br>
-                <input type="text" id="passwordCustomer" name="password" size="70" required><br><br>
+                <input type="password" id="passwordCustomer" name="password" size="70" required><br><br>
 
                 <label for="PhoneNumber" class="textforsignup">Phone Number:</label><br>
                 <input type="number" id="PhoneNumber" name="phone_no" size="70" placeholder="ex. 09XXXXXXXXX" required><br><br>
