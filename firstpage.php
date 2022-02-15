@@ -278,19 +278,19 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                         <td>2</td>
                         </tr>
                         <tr>
-                        <td>Juancarlos12322 Pembo Makati</td>
+                        <td>lorem</td>
                         <td>Alaklinne</td>
                         <td>PHP 35</td>
                         <td>10</td>
                         </tr>
                         <tr>
-                        <td>Juancarlos12322 Pembo Makati</td>
+                        <td>Lorem</td>
                         <td>Slim Container</td> 
                         <td>PHP 200</td>
                         <td>1</td>
                         </tr>
                         <tr>
-                        <td>Juancarlos12322 Pembo Makati</td>
+                        <td>Lorem</td>
                         <td>Round Container</td>
                         <td>PHP 200</td>
                         <td>2</td>
@@ -304,10 +304,13 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
 
                     </div>
                 </div>
-                <!-- <div id="noteContainer">
-                    <span id = "Notespan">NOTE:</span><br>
-                    <input type="text" name="notetext" id="notetext">
-                </div> -->
+               
+
+
+
+
+
+                
                 <div id="paymentmode">
                     <center><span>PAYMENT MODE</span><br></center><br>
                     <input type="radio" class="paymentoption" name="paymentOption"><span>GCASH</span><br><br>
