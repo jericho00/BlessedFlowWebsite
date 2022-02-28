@@ -35,7 +35,7 @@
                     <input type="text" id="username" name="username" size="70" placeholder="Enter Username"><br><br>
                     
                     <label for="password" class="textforlogin">Password:</label><br>
-                    <input type="text" id="password" name="password" size="70" placeholder="Enter Password"><br><br>
+                    <input type="password" id="password" name="password" size="70" placeholder="Enter Password"><br><br>
 
                     <a class="signupPage" href="index.php">Go back</a><br><br>
 

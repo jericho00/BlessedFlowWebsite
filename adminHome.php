@@ -22,6 +22,7 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
             <nav>
             <div id='navbar-container'>
                 <img src="Homeicon.png" class = "icon" id = "homeIcon" width="50px" height="40px"> <a class='navBar' href='#' onclick="show('home')">Home</a> <br> <br>
+                <img src="customer_records.png" class = "icon" id = "homeIcon" width="45px" height="40px"> <a class='navBar' href='#' onclick="show('records')">Records</a> <br> <br>
                 
                 <img src="loginIcon.png" class = "icon" id = "homeIcon" width="50px" height="40px"> <a class='navBar' href="index.php">Logout</a> <br> <br>
                 
@@ -66,53 +67,111 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
             </div>
             <div id = "orderpage" style="display: none">
                 
-                <div>
+            <div>
+                    
                     <table style="width:100%">
+                    <thead>
                         <tr>
-                        <th>Name & Location</th>
+                        <th>Name</th>
+                        <th>House No</th>
+                        <th>Street</th>
+                        <th>Subdivision</th>
+                        <th>Barangay</th>
+                        <th>City</th>
+                        <th>Phone No</th>
                         <th>Product</th>
-                        <th>Price</th>
                         <th>Quantity</th>
+                        <th>Price</th>
                         </tr>
+                    </thead>
+                        <?php
+                        include "db.php";
+                        
+                       
+                        $sql = "SELECT  users.name, users.house_no, users.street, users.subdiv, users.brgy, users.city, users.phone_no, product_table.prod_name, product_table.price from users INNER JOIN product_table";
+                        $result = $conn-> query($sql);
+                        
+                        
 
-                        <tr>
-                        <td id="SlimCapOrder"></td>
-                        <td>Mineral</td> 
-                        <td>PHP 25</td>
-                        <td>2</td>
-                        </tr>
-                        <tr>
-                        <td>lorem</td>
-                        <td>Alaklinne</td>
-                        <td>PHP 35</td>
-                        <td>10</td>
-                        </tr>
-                        <tr>
-                        <td>Lorem</td>
-                        <td>Slim Container</td> 
-                        <td>PHP 200</td>
-                        <td>1</td>
-                        </tr>
-                        <tr>
-                        <td>Lorem</td>
-                        <td>Round Container</td>
-                        <td>PHP 200</td>
-                        <td>2</td>
-                        </tr>
+                        if ($result-> num_rows > 0) {
+                            while ($row = $result-> fetch_assoc()) 
+                            {
+                            ?>
+                            <tbody>
+                            <tr>
+                                
+                                <td><?php echo $row["name"];?></td>
+                                <td><?php echo $row["house_no"]; ?></td>
+                                <td><?php echo $row["street"]; ?></td>
+                                <td><?php echo $row["subdiv"]; ?></td>
+                                <td><?php echo $row["brgy"]; ?></td>
+                                <td><?php echo $row["city"]; ?></td>
+                                <td><?php echo $row["phone_no"]; ?></td>
+                                <td><?php echo $row["prod_name"]; ?></td>
+                                <td><?php echo $row["price"]; ?></td>
+                            <t/body>
+                                <?php
+                            }?>
+                            <?php 
+                        }?>
+                        <?php
+                        // else {
+                        //     echo "0 result";
+                        // }
+
+                        // ?>
+                        
+                        
                     </table>
                 </div>
             
+               
+            <div>
 
+                <div id = "records" style="display: none">
+                    <table style="width:100%">
+                      
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>House No</th>
+                        <th>Street</th>
+                        <th>Subdivision</th>
+                        <th>Barangay</th>
+                        <th>City</th>
+                        <th>Phone No</th>
+                        
+                        </tr>
+                        <?php
+                        include "db.php";
+
+                        $sql = "SELECT id, name, house_no, street, subdiv, brgy, city, phone_no from users";
+                        $result = $conn-> query($sql);
+
+                        if ($result-> num_rows > 0) {
+                            while ($row = $result-> fetch_assoc()) {
+                                
+                                echo "<tr><td>". $row["id"]. "</td><td>". $row["name"]. "</td><td>". $row["house_no"]. "</td><td>". $row["street"]. "</td><td>". $row["subdiv"].
+                                 "</td><td>". $row["brgy"]. "</td><td>". $row["city"]. "</td><td>". $row["phone_no"]. "</td><td>"?>
+                                 <a href="deletion.php?delete=<?php echo $row['id']?>"> =<button type="button" id="delete" value="delete" class="button Orderbutton">Delete</button> </a>"</td></tr>";
+                                 <?php
+                            }
+                            echo "</table>";
+                        }
+                        else {
+                            echo "0 result";
+                        }
+
+                        
+
+                        ?>
+                        
+                        
+                    </table>
+                </div>
             
                 
-                <!-- <div id="paymentmode">
-                    <center><span>PAYMENT MODE</span><br></center><br>
-                    <input type="radio" class="paymentoption" name="paymentOption"><span>GCASH</span><br><br>
-                    <input type="radio" class="paymentoption" name="paymentOption"><span>Cash on Delivery</span><br><br>
-                    <span>Total:</span><br><br>
-                    <input type="button" value="Check Out" class="button checkout" id="checkout">
-                </div>
-                <divx></div> -->
+               
 
             </div>
             <script>
@@ -149,4 +208,3 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
     </body>
 
 </html>
-    

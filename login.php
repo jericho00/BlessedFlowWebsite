@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "db.php";
-
+include "functions.php";
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
 	function validate($data){
@@ -11,6 +11,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	   return $data;
 	}
 
+	$_SESSION["status"]=false;
 	$uname = validate($_POST['username']);
 	$pass = validate($_POST['password']);
 
@@ -21,6 +22,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header("Location: index.php?error=Password is required");
 	    exit();
 	}else{
+		// $pass = password_hash($password, PASSWORD_DEFAULT);
+		$pass = md5($pass);
 		$sql = "SELECT * FROM users WHERE username ='$uname' AND password='$pass'";
 
 		$result = mysqli_query($conn, $sql);
@@ -29,7 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 			$row = mysqli_fetch_assoc($result);
             if ($row['username'] === $uname && $row['password'] === $pass) {
             	
-        
+				$_SESSION["status"]= true;
             	header("Location: firstpage.php");
 		        exit();
             }else{

@@ -1,2 +1,3 @@
 <?php
-echo"hello";
+require "dp.php";
+echo "$name, $street, $subdiv";

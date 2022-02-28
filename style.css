@@ -28,6 +28,7 @@ body {
     width: 75em;
     border-style: solid;
     padding: 0px;
+    
   }
 
   #logo {
@@ -67,7 +68,7 @@ body {
   text-align: center;
   }
   #product{
-    max-width: 40em;
+    width: 40em;
   }
   #main-container {
     background-color: #29648A;
@@ -77,7 +78,8 @@ body {
     padding: .6em;
     float: right;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: auto;
+    
   }
   .HomeText {
     width: auto;
@@ -633,4 +635,15 @@ table tr {
   border-radius: 5px;
   position: relative;
   width: 32em;
+}
+
+
+.table-fixed tbody {
+  display: block;
+  width: auto;
+  overflow-x: scroll;
+}
+
+.table-fixed tr {
+  display: block;
 }

@@ -1,15 +1,20 @@
-<?php
+<?php 
 session_start();
-if (isset($_SESSION['password']) && isset($_SESSION['username']))
 
-?>
+if ($_SESSION["status"] != true){
+
+    header("Location: index.php");
+}
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta content='text/html ; charset=utf-8'/>
         <title>Blessed Flow Water Refilling Station</title>
         <link rel="stylesheet" href="style.css">
-        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     </head>
 
     <body>
@@ -26,7 +31,7 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                 <img src="AboutusIconn.png" class = "icon" id = "homeIcon" width="35px" height="40px"> <a class='navBar' href='#' onclick="show('about')">About Us</a> <br> <br>
 
                 
-                <img src="loginIcon.png" class = "icon" id = "homeIcon" width="50px" height="40px"> <a class='navBar' href="index.php">Logout</a> <br> <br>
+                <img src="loginIcon.png" class = "icon" id = "homeIcon" width="50px" height="40px"> <a class='navBar' href="logout.php">Logout</a> <br> <br>
                 
 
             </div>
@@ -81,13 +86,15 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                      <div id="Mineral">
                     <img id='MineralGlass' class='floatright' src='MineralGlass.jpg' alt='water station' width="200" height="200"/>
                     <span class="MineralText">For Mineral 25 Pesos per Refill</span> <br>
-                    <input type="button" value="ORDER" class="button Orderbutton" id='Mineralbutton' onclick="myFunction()">
+                    <button type="button" value="Mineral" onclick= 'ordered()' class="button Orderbutton" id='Mineralbutton'>ORDER</button>
+                    <!-- <input type="button" value="Mineral" class="button Orderbutton" id='Mineralbutton' onclick= "ordered()">ORDER -->
                 </div>
 
                 <div id="Alkaline">
                     <img id='AlkalineGlass' class='floatright' src='AlkalineGlass.jpg' alt='water station' width="325" height="200"/>
                     <span class="AlkalineText">For Alkaline 35 Pesos per Refill</span>
-                    <input type="button" value="ORDER" class="button Orderbutton" id='Alkalinebutton'>
+                    <button type="button" value="Alkaline" onclick= 'ordered()' class="button Orderbutton" id='Alkalinebutton'>ORDER</button>
+                    <!-- <input type="button" value="ORDER" class="button Orderbutton" id='Alkalinebutton' onclick = ""> -->
                 </div>
                 </div>
                
@@ -99,13 +106,15 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                     <div id="Slim">
                         <img id='SlimContainer' class='floatright' src='SlimContainer.jpg' alt='water station' width="250" height="250"/>
                         <span class="SlimText">Slim Container 200 Pesos/pc. </span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimConbutton'>
+                        <button type="button" value="SlimContainer" onclick= 'ordered()' class="button Orderbutton" id='SlimConbutton'>ORDER</button>
+                        <!-- <input type="button" value="ORDER" class="button Orderbutton" id='SlimConbutton'> -->
                     </div>
     
                     <div id="Round">
                         <img id='RoundContainer' class='floatright' src='RoundContainer.png' alt='water station' width="250" height="250"/>
                         <span class="RoundText">Round Container 200 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='RoundConbutton'>
+                        <button type="button" value="RoundContainer" onclick= 'ordered()' class="button Orderbutton" id='RoundConbutton'>ORDER</button>
+                        <!-- <input type="button" value="ORDER" class="button Orderbutton" id='RoundConbutton'> -->
                     </div>
                 </div>
                 
@@ -116,24 +125,28 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                     <div id='RoundCapdiv' >
                         <img id='RoundCap' class='floatright' src="RoundCap.jpg" alt="'water station" width="250" height="250">
                         <span class="RoundCapText">Round Cap 25 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='RoundCapbutton'>
+                        <button type="button" value="Round Cap" onclick= 'ordered()' class="button Orderbutton" id='RoundCapbutton'>ORDER</button>
+                        <!-- <input type="button" value="ORDER" class="button Orderbutton" id='RoundCapbutton'> -->
                         
                     </div>
                     <div id='SlimCapdiv'> 
                         <img id='SlimCap' src="SlimCap.jpg" alt="'water station" width="250" height="250">
                         <span class="SlimCapText">Slim Cap 25 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimCapbutton' onclick="SlimCapOrder()">
+                        <button type="button" value="Slim Cap" onclick= 'ordered()' class="button Orderbutton" id='SlimCapbutton'>ORDER</button>
+                        <!-- <input type="button" value="ORDER" class="button Orderbutton" id='SlimCapbutton' onclick="SlimCapOrder()"> -->
                         
                     </div>
                     <div id='SlimBigdiv'>
                         <img id='SlimBig' src="SlimBigCap.jpg" alt="'water station" width="250" height="250">
                         <span class="SlimBigText">Slim Big cap 35 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimBigCapbutton' onclick="SlimBigOrder()">
+                        <button type="button" value="Slim Big Cap" onclick= 'ordered()' class="button Orderbutton" id='SlimBigCapbutton'>ORDER</button>
+                        <!-- <input type="button" value="ORDER" class="button Orderbutton" id='SlimBigCapbutton' onclick="SlimBigOrder()"> -->
                     </div>
                     <div id='SlimFaucetdiv'>
                         <img id='SlimFaucet' src="SlimFaucet.jpg" alt="'water station" width="250" height="250">
                         <span class="SlimFaucetText">Faucet 50 Pesos/pc.</span>
-                        <input type="button" value="ORDER" class="button Orderbutton" id='SlimFaucetbutton'>
+                        <button type="button" value="Slim Faucet" onclick= 'ordered()' class="button Orderbutton" id='SlimFaucetbutton'>ORDER</button>
+                        <!-- <input type="button" value="ORDER" class="button Orderbutton" id='SlimFaucetbutton'> -->
                     </div>
                 </div>
                 
@@ -248,7 +261,7 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                 
             </div>
 
-            <div id="authentication" style="display: none; background-color: #29648A;">
+            <!-- <div id="authentication" style="display: none; background-color: #29648A;">
                 <div id="authentication-bar">
                     <h1 style="color: white;" >Customer Authentication</h1>
                 </div>
@@ -261,45 +274,87 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
 
                     <input type="button" id="Verify" value="Verify" class="button verifyButton" href="#" onclick="show('')">
                 </div>
-                
+                 -->
 
 
             </div>
             <div id = "orderpage" style="display: none">
                 
                 <div>
+                    
                     <table style="width:100%">
                         <tr>
-                        <th>Name & Location</th>
+                        <th>Name</th>
+                        <th>House No</th>
+                        <th>Street</th>
+                        <th>Subdivision</th>
+                        <th>Barangay</th>
+                        <th>City</th>
+                        <th>Phone No</th>
                         <th>Product</th>
-                        <th>Price</th>
                         <th>Quantity</th>
+                        <th>Price</th>
                         </tr>
+                        <?php
+                        include "db.php";
+                        include "functions.php";
+                        $user_data = check_login($conn);
+                        // if(isset($_POST['request'])) {
+                        //     $request = $_POST['request'];
+                        //     $query = "UPDATE users SET product_table.prod_name = '$request'";
+                        //     $result = mysqli_query($conn, $query);
+                            
+                        // if(isset($_POST['username'])){
+                        // $username = $_POST['username'];
+                        // echo $username;
+                        // if (isset($_POST['username'])) {
 
-                        <tr>
-                        <td id="SlimCapOrder"></td>
-                        <td>Mineral</td> 
-                        <td>PHP 25</td>
-                        <td>2</td>
-                        </tr>
-                        <tr>
-                        <td>lorem</td>
-                        <td>Alaklinne</td>
-                        <td>PHP 35</td>
-                        <td>10</td>
-                        </tr>
-                        <tr>
-                        <td>Lorem</td>
-                        <td>Slim Container</td> 
-                        <td>PHP 200</td>
-                        <td>1</td>
-                        </tr>
-                        <tr>
-                        <td>Lorem</td>
-                        <td>Round Container</td>
-                        <td>PHP 200</td>
-                        <td>2</td>
-                        </tr>
+                        
+                        $sql = "SELECT * from users" ;
+                        $result1 = $conn-> query($sql);
+                        
+                        if ($result1-> num_rows > 0) {
+                            while ($row = $result1-> fetch_assoc()) {?>
+
+                                <tr>
+                                    <td><?php echo $row["name"] ?></td>
+                                    <td><?php echo $row["house_no"] ?></td>
+                                    <td><?php echo $row["street"]?></td>
+                                    <td><?php echo $row["subdiv"]?></td>
+                                    <td><?php echo $row["brgy"]?></td>
+                                    <td><?php echo $row["city"]?></td>
+                                    <td><?php echo $row["phone_no"]?></td>
+                                    
+                                </tr>
+                                <?php
+                            }
+                            echo "</table>";
+                        }
+                        else {
+                            echo "0 result";
+                        }
+
+                //     }
+                // }
+
+                        ?>
+                        <?php
+                        // include "db.php";
+                        //     if(isset($_SESSION['username'])){
+                        //         $usename = $_SESSION['username'];
+                        //         $query = "SELECT house_no, street, subdiv, brgy, city, region, province FROM users WHERE username = '$usename' GROUP BY username";
+                        //         $result = mysqli_query($conn, $query);
+                        //         if($result && mysqli_num_rows($result) > 0){
+                        //             while($row = mysqli_fetch_array($result)){
+                        //                 echo "<tr><td>".$row['house_no']."</td><td class='toUpperCase'>".$row['street']."</td><td class='toUpperCase'>".$row['subdiv']."</td><td class='toUpperCase'>".$row['brgy']."</td><td class='toUpperCase'>".$row['city']."</td><td class='toUpperCase'>".$row['region']."</td><td class='toUpperCase'>".$row['province']."</td></tr>";
+                        //             }
+                        //         }
+                        //         else{
+                        //             echo "fail";
+                        //         }
+                        //     }
+                        // ?>
+                        
                     </table>
                 </div>
             
@@ -318,7 +373,7 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                 
                 <div id="paymentmode">
                     <center><span>PAYMENT MODE</span><br></center><br>
-                    <input type="radio" class="paymentoption" name="paymentOption"><span>GCASH</span><br><br>
+                    <input type="radio" class="paymentoption" name="paymentOption"><span>GCASH - No. xxxxxxxxxxx </span><br><br>
                     <input type="radio" class="paymentoption" name="paymentOption"><span>Cash on Delivery</span><br><br>
                     <span>Total:</span><br><br>
                     <input type="button" value="Check Out" class="button checkout" id="checkout">
@@ -351,11 +406,37 @@ if (isset($_SESSION['password']) && isset($_SESSION['username']))
                     document.getElementById("ContainerOrder").innerHTML = "Hello World";
                 }
                 
+
+                function ordered(){
+                    $("#Mineralbutton, #Alkalinebutton, SlimConbutton, RoundConbutton, RoundCapbutton, SlimCapbutton, SlimBigCapbutton, SlimFaucetbutton").click(function() {
+                        var val = $(this).val();
+                        alert(val);
+                       
+                        $.ajax({
+                            url:"firstpage.php",
+                            type:"POST",
+                            data:'request=' + val,
+                            beforeSend: function(){
+                                $("#container").html("<span>Working...</span>");
+                            },
+                            success: function(data){
+                                $("#container").html(data);
+                            }
+                        });
+                    });
+                    // alert("Order Placed, Checkout in Shopping Cart");
+                    // alert(#Mineralbutton);
+                }
+
+                <?php ?>
             </script>
 
             
         </div>
 
+
+
+      
     </body>
 
 </html>
