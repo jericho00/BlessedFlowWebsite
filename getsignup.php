@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE <html>
 <html>
 <head>
@@ -21,11 +24,13 @@
         $password = $_REQUEST['password'];
         $name =  $_REQUEST['name'];
         $phone_no = $_REQUEST['phone_no'];
+        $pass = md5($pass);
+        // $pass = password_hash($password, PASSWORD_DEFAULT);
         
         
         $sql = "INSERT INTO users VALUES ('','$name','$houseno','$street','$subdiv','$brgy','$city','$region','$province','$username', 
-            '$password','$phone_no')";
-
+            '$pass','$phone_no')";
+        
         if(mysqli_query($conn, $sql)){
             
                 

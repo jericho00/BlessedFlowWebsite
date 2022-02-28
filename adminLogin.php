@@ -14,10 +14,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	$unameadmin = validate($_POST['username']);
 	$passadmin = validate($_POST['password']);
 
-	if (empty($uname)) {
+	if (empty($unameadmin)) {
 		header("Location: admin.php?error=User Name is required");
 	    exit();
-	}else if(empty($pass)){
+	}else if(empty($passadmin)){
         header("Location: admin.php?error=Password is required");
 	    exit();
 	}else{

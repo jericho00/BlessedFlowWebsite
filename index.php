@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,7 +37,7 @@
                     <input type="text" id="username" name="username" size="70" placeholder="Enter Username"><br><br>
                     
                     <label for="password" class="textforlogin">Password:</label><br>
-                    <input type="text" id="password" name="password" size="70" placeholder="Enter Password"><br><br>
+                    <input type="password" id="password" name="password" size="70" placeholder="Enter Password"><br><br>
 
                     <a class="signupPage" href="#" onclick="show('signup')">Do you have an account? Sign up now</a><br><br>
                     <a class="signupPage" href="admin.php">Sign in as Administrator</a><br><br>
@@ -102,7 +105,7 @@
                 <input type="password" id="passwordCustomer" name="password" size="70" required><br><br>
 
                 <label for="PhoneNumber" class="textforsignup">Phone Number:</label><br>
-                <input type="number" id="PhoneNumber" name="phone_no" size="70" placeholder="ex. 09XXXXXXXXX" required><br><br>
+                <input type="number" id="PhoneNumber" name="phone_no" placeholder="ex. 09XXXXXXXXX" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "11" required><br><br>
 
                 <label for="signupYes"></label><br> <br>
                 <div class="SignupYes">
@@ -110,7 +113,7 @@
                     <label for="signupYes" style="font-size: 1.2em;" >I hereby declare that the information given above is true</label> <br>
                 </div><br>
                 
-                <a class="signupPage" href="index.php">Do you have an account? Sign up now</a><br><br>
+                <a class="signupPage" href="index.php">Do you have an account? Sign in now</a><br><br>
                 
                 <button type = "submit" class="button signupButton">Sign Up</button>
                 
